@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+<!--    后端服务的父项目-->
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.bfzywz</groupId>
+    <artifactId>rjk_2022_parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+    <modules>
+        <module>rjk-repo</module>
+        <module>rjk-service</module>
+        <module>rjk-admin</module>
+        <module>rjk-web-api</module>
+    </modules>
+
+
+</project>
