@@ -4,7 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 <!--    后端服务的父项目-->
-
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.bfzywz</groupId>
     <artifactId>rjk_2022_parent</artifactId>
@@ -13,9 +12,74 @@
     <modules>
         <module>rjk-repo</module>
         <module>rjk-service</module>
-        <module>rjk-admin</module>
+        <module>rjk-web-admin</module>
         <module>rjk-web-api</module>
     </modules>
 
+<!--    管理依赖版本-->
+    <properties>
+        <java.version>1.8</java.version>
+        <mysql.connector.java.version>5.1.45</mysql.connector.java.version>
+        <mybatis-plus.version>3.4.3.1</mybatis-plus.version>
+        <lombok.version>1.18.24</lombok.version>
+        <commons-io.version>2.11.0</commons-io.version>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
+        <junit.version>4.12</junit.version>
+        <spring.boot.version>1.5.2.RELEASE</spring.boot.version>
+    </properties>
 
+<!--    添加依赖-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.enbatis</groupId>
+                <artifactId>mybatis-plugs</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.2.6.RELEASE</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
